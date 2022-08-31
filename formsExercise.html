@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Experience Survey</title>
+</head>
+<body>
+    
+    <form>
+
+        <fieldset>
+            <legend>Customer Experience Survey</legend>
+
+            <div>
+            <label for="storeNum">Store Number</label>
+            <select name="storeNum" id="storeNum">
+                <!-- Bonus 1 -->
+                <!-- Adding the "hidden" attribute/keyword hids the option when the dropdown is selected -->
+                <option hidden>Select A Store</option>
+                <option value="3109">3109</option>
+                <option value="2421">2421</option>
+                <option value="5357">5357</option>
+            </select>
+            </div>
+
+            <div>
+            <fieldset>
+            <legend>When you visited</legend>    
+                <div>
+                    <!-- Bonus 2 -->
+                    <!-- Adding the "min" and "max" attributes will limit the date selection to a specific range -->
+                    <label for="dateVis">Date Visited</label>
+                    <input type="date" name="dateVis" id="dateVis" max="2022-12-31" min="2022-01-01">
+                </div>
+                <div>
+                    <label for="timeVis">Time</label>
+                    <input type="time" name="timeVis" id="timeVis">
+                </div>
+            </fieldset>
+            </div>
+            
+            <div>
+                <label for="fullName">Full Name</label>
+                <input type="text" name="fullName" id="fullName" placeholder="Name">
+            </div>
+            
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email">
+            </div>
+            
+            <div>
+            <fieldset>
+            <legend>How would you rate your level of satisfaction with your visit?</legend>
+                <div>
+                    <input type="radio" name="satLevel" id="satisfied">
+                    <label for="satisfied">Satisfied</label>
+                    <br>
+                    <!-- Bonus 3 -->
+                    <!-- Adding the checked attribute makes the option appear selected when the page opens. -->
+                    <input type="radio" name="satLevel" id="neither" checked>
+                    <label for="neither">Neither Satisfied nor Dissatisfied</label>
+                    <br>
+                    <input type="radio" name="satLevel" id="dissat">
+                    <label for="dissat">Dissatisfied</label>
+                    <br>
+                </div>
+            </fieldset>
+            </div>
+             
+            <div> 
+            <label for="tellUsTxt">Tell us about your experience:</label>
+            <br>
+            <textarea name="tellUsTxt" id="tellUsTxt" cols="20" rows="2.5"></textarea>
+            </div>
+        
+            <div>
+            <label for="timesVis">Times Visited:</label>
+            <br>
+            <!-- Bonus 4 -->
+            <!-- Adding the "min" and "max" attributes will limit the number selection to a specific range. -->
+            <input type="number" name="timesVis" id="timesVis" min="1" max="30">
+            </div>
+
+            <div>
+            <!-- Bonus 5 -->
+            <!-- Adding the required attribute/keyword will NOT allow the user to submit the form unless the form element is completed (the checkbox being checked in this case). -->
+            <input type="checkbox" name="contactChk" id="contactChk" required>
+            <label for="contactChk">Please check the box if you would be willing to be contacted about your experience</label>
+            </div>
+            
+            <div>
+            <!-- Bonus 6 -->
+            <!-- Using the pattern attribute allows for a required min and max length to be set for the input. Also, the title attribute allows for a message to be displayed when the user does NOT meet the requirements -->
+            <label for="password">Create a Password</label>
+            <input type="password" name="password" id="password" pattern=".{5,10}" title="Please enter a password that is 5 to 10 characters in length">
+            </div>
+
+            <!-- oninvalid="this.setCustomValidity ('Please enter a password...') also works similarly to the title attribute -->
+
+            <div>
+            <!-- Bonus 7 -->
+            <!-- A "reset" input clears out all the values entered or selected in a form. -->
+            <input type="reset" value="Reset the Form">
+            </div>
+
+            <div>
+            <input type="submit">
+            </div>
+    
+        </fieldset>
+
+    </form>
+
+</body>
+</html>
